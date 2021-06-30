@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.testdemo">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <permission
+        android:name="com.example.testdemo.aidl.ACCESS_TEST_SERVER"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="com.example.testdemo.aidl.ACCESS_TEST_SERVER" />
+
+    <application
+        android:name=".base.BaseApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".lifecycle.LifecycleActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".coroutine.CoroutineActivity">
+        </activity>
+        <activity android:name=".algorithm.AlgorithmActivity" />
+        <activity android:name=".span.SpanActivity"></activity> <!-- <activity android:name=".compose.ComposeActivity"> -->
+        <!-- </activity> -->
+        <activity android:name=".singleclick.SingleClickActivity" />
+        <activity android:name=".pagerrecyclerview.PagerRecyclerViewActivity" />
+        <activity android:name=".message.MessageActivity" />
+        <activity android:name=".ashmem.AshmemActivity" />
+        <activity android:name=".aidl.TestAidlActivity" />
+        <activity android:name=".test.TestActivity" />
+        <activity android:name=".TestThreadActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".recyclerviewpage.ReActivity" />
+        <activity android:name=".recyclerviewpage.PageActivity" />
+        <activity android:name=".MainActivity" >
+
+        </activity>
+
+        <service
+            android:name=".aidl.TestService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":other">
+            <intent-filter>
+                <action android:name="com.example.aidl.Server.Action" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".ashmem.AshmemService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":other">
+            <intent-filter>
+                <action android:name="com.example.ashmem.Server.Action" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".message.MessageService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":other">
+            <intent-filter>
+                <action android:name="com.example.msg.Server.Action" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

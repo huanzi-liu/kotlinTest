@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/constraint"
+        tools:context=".recyclerviewpage.ReActivity">
+
+        <ImageView
+            android:id="@+id/iv_task_bubble"
+            android:layout_width="match_parent"
+            android:layout_height="528dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="265dp"
+            android:layout_marginEnd="12dp"
+            android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_task_bubble"
+            app:layout_constraintEnd_toEndOf="@+id/iv_task_bubble"
+            app:layout_constraintStart_toStartOf="@+id/iv_task_bubble"
+            android:background="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="@+id/iv_task_bubble">
+
+        <ImageView
+            android:id="@+id/iv_task_subject"
+            android:layout_width="match_parent"
+            android:layout_height="346dp"
+            android:layout_margin="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/color_primary_texts_32"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_task"
+            android:layout_width="0dp"
+            android:layout_height="245dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/color_primary_texts_33"
+            android:layout_marginStart="23dp"
+            android:layout_marginEnd="23dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_task_subject"
+            app:layout_constraintEnd_toEndOf="@+id/iv_task_subject"
+            app:layout_constraintStart_toStartOf="@+id/iv_task_subject"
+            app:layout_constraintTop_toTopOf="@+id/iv_task_subject" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
